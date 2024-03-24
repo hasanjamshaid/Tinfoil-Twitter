@@ -40,11 +40,10 @@ android {
 
     }
 
-    lintOptions {
-        disable 'ExtraTranslation'
-        disable 'MissingTranslation'
-        abortOnError false
-    }
     namespace 'com.mill_e.twitterwrapper'
+    lint {
+        abortOnError false
+        disable 'ExtraTranslation', 'MissingTranslation'
+    }
 
 }
