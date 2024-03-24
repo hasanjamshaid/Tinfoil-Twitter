@@ -168,7 +168,7 @@ public abstract class BaseTwitterWebViewActivity extends Activity implements
 
         // Set the database path for this WebView so that
         // HTML5 Storage API works properly
-        mWebSettings.setAppCacheEnabled(true);
+        //mWebSettings.setAppCacheEnabled(true);
         mWebSettings.setDatabaseEnabled(true);
 
         // Create a CookieSyncManager instance and keep a reference of it
