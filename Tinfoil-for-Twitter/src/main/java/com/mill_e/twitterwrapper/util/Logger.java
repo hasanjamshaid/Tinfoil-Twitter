@@ -17,7 +17,6 @@
 package com.mill_e.twitterwrapper.util;
 
 import android.util.Log;
-import com.mill_e.twitterwrapper.BuildConfig;
 
 /**
  * Logger wrapper class to handle {@link android.util.Log} depending on debug level.
@@ -25,7 +24,7 @@ import com.mill_e.twitterwrapper.BuildConfig;
 public class Logger {
 
     // Static field with default level
-    private static int sLevel = BuildConfig.DEBUG ? Log.VERBOSE : Log.ERROR;
+    private static int sLevel = Log.VERBOSE;
 
     /**
      * Get current debug level of this application.

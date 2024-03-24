@@ -7,13 +7,16 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:21.+'
-    compile 'com.squareup.picasso:picasso:2.3.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.squareup.picasso:picasso:2.3.3'
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        buildToolsVersion = rootProject.ext.buildToolsVersion
+        compileSdk = rootProject.ext.compileSdkVersion
+    }
 
     defaultConfig {
         versionCode 20150414
@@ -21,15 +24,6 @@ android {
 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-    }
-
-    signingConfigs {
-        release {
-            storeFile file(System.getenv("AND_KEYSTORE"))
-            storePassword System.getenv("AND_KEYSTORE_PWD")
-            keyAlias System.getenv("AND_KEYSTORE_TWTR_ALIAS")
-            keyPassword System.getenv("AND_KEYSTORE_TWTR_PWD")
-        }
     }
 
     buildTypes {
@@ -42,7 +36,6 @@ android {
         release {
             minifyEnabled false
             debuggable false
-            signingConfig signingConfigs.release
         }
 
     }
@@ -52,5 +45,6 @@ android {
         disable 'MissingTranslation'
         abortOnError false
     }
+    namespace 'com.mill_e.twitterwrapper'
 
 }
